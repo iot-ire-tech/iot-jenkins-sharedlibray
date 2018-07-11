@@ -1,6 +1,8 @@
 @Library("github.com/iot-ire-tech/iot-jenkins-sharedlibray@test")
 import com.iot.*
 
+
+echo "INF: Org ${org}"
 node {
 // instantiate
 pl = new pipeline()
