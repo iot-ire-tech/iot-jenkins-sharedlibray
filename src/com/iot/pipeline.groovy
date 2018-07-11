@@ -6,7 +6,8 @@ package com.iot
  * @author ae
  */
 def build() {
-  mvn clean deploy -U
+//  mvn clean deploy -U
+  println "Building code  "
 }
 
 def test(name) {
