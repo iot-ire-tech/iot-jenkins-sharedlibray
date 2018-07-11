@@ -1,4 +1,4 @@
-@Library("github.com/iot-ire-tech/iot-jenkins-sharedlibray@test")
+@Library("github.com/iot-ire-tech/iot-jenkins-sharedlibray@master")
 import com.iot.*
 
 
