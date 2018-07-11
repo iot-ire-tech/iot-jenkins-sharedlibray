@@ -6,7 +6,7 @@ pl = new pipeline()
 
 // work
 pl.build()
-pl.test(regression)
-pl.deploy(staging,api)
-pl.test(load)
-pl.deploy(prod,api)
+pl.test("regression")
+pl.deploy("staging","api")
+pl.test("load")
+pl.deploy("prod","api")
