@@ -1,6 +1,7 @@
 @Library("github.com/iot-ire-tech/iot-jenkins-sharedlibray@master")
 import com.iot.*
 
+node {
 // instantiate
 pl = new pipeline()
 
@@ -10,3 +11,4 @@ pl.test("regression")
 pl.deploy("staging","api")
 pl.test("load")
 pl.deploy("prod","api")
+}
