@@ -1,4 +1,4 @@
-@Library("jenkins-shared-libraries@release")
+@Library("iot-jenkins-sharedlibray@master")
 import io.abc.*
 
 // instantiate
