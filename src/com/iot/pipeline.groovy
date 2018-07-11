@@ -9,6 +9,8 @@ def build() {
 	//  mvn clean deploy -U
 	try {
 		println "Building code  "
+		throw Exception();
+		
 	} catch (Exception e) {
 		println "ERR: Building ...."
 	}
