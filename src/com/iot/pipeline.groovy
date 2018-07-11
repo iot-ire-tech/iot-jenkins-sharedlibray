@@ -11,11 +11,11 @@ def build() {
 }
 
 def test(name) {
-  sh "/usr/local/bin/${name}"
+  sh "echo ${name}"
 }
 
 def deploy(env,app) {
-  println "Deploying to ${env}_{app} "
+  println "Deploying to ${env}_${app} "
 }
 
 // AimTheory have a recommendation and explanation about this here
