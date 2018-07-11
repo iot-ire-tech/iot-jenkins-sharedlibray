@@ -1,10 +1,9 @@
 @Library("github.com/iot-ire-tech/iot-jenkins-sharedlibray@master")
 import com.iot.*
-import com.iot.*
 
 
-var = new globals()
-echo "INF: Org var.$org"
+globalvar = new globals()
+echo "INF: Org $org"
 node {
 // instantiate
 pl = new pipeline()
