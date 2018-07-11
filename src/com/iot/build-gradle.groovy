@@ -6,20 +6,16 @@ package com.iot
  * @author ae
  */
 def build() {
-	//  mvn clean deploy -U
-	try {
-		println "Building code  "
-	} catch (Exception e) {
-		println "ERR: Building ...."
-	}
+//  mvn clean deploy -U
+  println "Building code  "
 }
 
 def test(name) {
-	sh "echo ${name}"
+  sh "echo ${name}"
 }
 
 def deploy(env,app) {
-	println "Deploying to ${env}_${app} "
+  println "Deploying to ${env}_${app} "
 }
 
 // AimTheory have a recommendation and explanation about this here
