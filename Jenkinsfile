@@ -3,7 +3,7 @@ import com.iot.*
 
 
 globalvar = new globals()
-echo "INF: Org $org"
+echo "INF: Org ${org}"
 node {
 // instantiate
 pl = new pipeline()

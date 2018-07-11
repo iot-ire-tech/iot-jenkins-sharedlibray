@@ -8,4 +8,6 @@
 def org='AIG'
 def project='Autobooker'
 
-println "Hello $name!"
+println "Hello $org!"
+
+return this
