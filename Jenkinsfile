@@ -37,7 +37,7 @@ node ("windows") {
 		println "INF: Service Name " + services.get(0)
 		println "INF: Service Ref " + services.get(1)
 		for (String service : services) {
-			println "INF: New Service Details " + serviceItem.value
+			println "INF: New Service Details " + service
 		}
 	}
 
