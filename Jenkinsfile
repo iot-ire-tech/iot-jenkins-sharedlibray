@@ -20,29 +20,34 @@ node ("windows") {
 
 	// For each new service repeat!!!	
 	serviceRef ="https://github.aig.net/commercial-it-global-delivery/ael-policy-autobooker-test-automation-5416.git";
-	services = [ serviceRef, serviceRef]
-	for ( serviceItem in services ) {
+	servicesPack = [
+		br :  ["br", serviceRef]
+	]
+	for ( serviceItem in servicesPack ) {
+		println "INF: New Service Test " + serviceItem.value
 
-		println "INF: Starting New Component Service Test " + serviceItem 
-		deleteDir()
+		for ( service in serviceItem.value ) {
+			println "INF: Service Item " + service 
+			deleteDir()
 		
-		stage ("checkoutTests") {
-			targetDir = "myAcceptanceTests"
-			agit.checkOutTestAutomation (serviceItem, targetDir)
-		}
-
-		stage ("runTests-"+sut) {
-			builder.test (targetDir)
-		}
-
-		stage ("report") {
-			targetDir = "myAcceptanceTests"
-			reporter.test (targetDir)
-		}
-
-		stage ("archive") {
-			targetDir = "myAcceptanceTests/build/report/**"
-			arch.archive (targetDir)
+			//		stage ("coTests") {
+			//			targetDir = "myAcceptanceTests"
+			//			agit.checkOutTestAutomation (serviceItem, targetDir)
+			//		}
+			//
+			//		stage ("exeTest-"+sut) {
+			//			builder.test (targetDir)
+			//		}
+			//
+			//		stage ("report") {
+			//			targetDir = "myAcceptanceTests"
+			//			reporter.test (targetDir)
+			//		}
+			//
+			//		stage ("archive") {
+			//			targetDir = "myAcceptanceTests/build/report/**"
+			//			arch.archive (targetDir)
+			//		}
 		}
 	}
 }
