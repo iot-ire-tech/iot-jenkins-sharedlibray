@@ -5,10 +5,18 @@ mode = params.mode.toLowerCase()
 def sut = params.serviceName
 def env = params.env
 
+def debug=false
+
+
+
 node ("windows") {	
 
 	pl = new pipeline()
 
+	stage ("init") {
+		deleteDir()
+	}
+		
 	// work
 	pl.build()
 	pl.test("regression")
