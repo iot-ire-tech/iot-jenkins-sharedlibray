@@ -14,6 +14,7 @@ node ("windows") {
 
 	pl = new pipeline()
 	agit = new gitIt()
+	builder = new gradleIt()
 
 	stage ("init") {
 		deleteDir()
@@ -23,6 +24,16 @@ node ("windows") {
 		agit.checkOutTestAutomation ()
 	}
 
+	stage ("runTests") {
+			echo "INF: Current Path (" + pwd() +")"
+			dir ( _targetDir ) {
+				echo "INF: New Current Path (" + pwd() +")"
+				bat "./gradlew.bat clean"
+				bat "./gradlew.bat test"
+				if (debug ) bat "dir /s ." 
+			}
+            
+		}
 	// work
 	pl.build()
 	pl.test("regression")
