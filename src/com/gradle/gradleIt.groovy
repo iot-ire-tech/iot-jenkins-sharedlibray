@@ -8,7 +8,7 @@ def test (testDir) {
 	dir ( testDir ) {
 		echo "INF: New Current Path (" + pwd() +")"
 		bat "./gradlew.bat clean"
-		bat "./gradlew.bat test --configure-on-demand --daemon"
+		bat "./gradlew.bat test --continue --configure-on-demand --daemon"
 	}
 	echo "INF: Finished Test Process"
 

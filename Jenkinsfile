@@ -32,8 +32,8 @@ serviceRef6 ="client-service";
 serviceRef7 ="agent-api-service";
 serviceRef8 ="rule-cache-service";
 
-//servicePack = [serviceRef, serviceRef2 ]
-servicePack = [serviceRef2 ]
+//servicePack = [serviceRef2 ]
+servicePack = [serviceRef, serviceRef2 ]
 
 for (String service  : servicePack) {
 
