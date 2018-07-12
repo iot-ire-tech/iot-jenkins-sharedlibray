@@ -1,3 +1,4 @@
+#!/usr/bin/groovy
 
 creds = "ssh_devopspipeline_credentials";
 creds = "devopspipeline"
