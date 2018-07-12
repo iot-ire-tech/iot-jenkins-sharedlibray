@@ -40,7 +40,7 @@ node ("windows") {
 	}
 
 	stage ("archive") {
-		targetDir = "myAcceptanceTests"
+		targetDir = "myAcceptanceTests/build/report/**"
 		arch.archive (targetDir)
 	}
 }
