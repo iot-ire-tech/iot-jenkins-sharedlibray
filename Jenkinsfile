@@ -18,36 +18,30 @@ arch = new archiveIt()
 
 node ("windows") {	
 
-	stage ("init") {
-		deleteDir()
-	}
-
 	// For each new service repeat!!!	
 	serviceRef ="https://github.aig.net/commercial-it-global-delivery/ael-policy-autobooker-test-automation-5416.git";
-	def m = [br: ["br", serviceRef]]
-	for ( item in m ) {
-		println "INF: key " + item.key 
-		item.value.list {
-			println "INF: val " + it 
-		}
-	}
+	services = [ serviceRef, serviceRef]
+	for ( serviceItem in services ) {
+		println "INF: Starting New Component Service Test " + serviceItem.key 
+		deleteDir()
 		
-	stage ("checkoutTests") {
-		targetDir = "myAcceptanceTests"
-		agit.checkOutTestAutomation (serviceRef, targetDir)
-	}
+		stage ("checkoutTests") {
+			targetDir = "myAcceptanceTests"
+			agit.checkOutTestAutomation (serviceItem, targetDir)
+		}
 
-	stage ("runTests-"+sut) {
-		builder.test (targetDir)
-	}
+		stage ("runTests-"+sut) {
+			builder.test (targetDir)
+		}
 
-	stage ("report") {
-		targetDir = "myAcceptanceTests"
-		reporter.test (targetDir)
-	}
+		stage ("report") {
+			targetDir = "myAcceptanceTests"
+			reporter.test (targetDir)
+		}
 
-	stage ("archive") {
-		targetDir = "myAcceptanceTests/build/report/**"
-		arch.archive (targetDir)
+		stage ("archive") {
+			targetDir = "myAcceptanceTests/build/report/**"
+			arch.archive (targetDir)
+		}
 	}
 }
