@@ -36,9 +36,6 @@ node ("windows") {
 	for (ArrayList<String> services : servicesPack) {
 		println "INF: Service Name " + services.get(0)
 		println "INF: Service Ref " + services.get(1)
-		for (String service : services) {
-			println "INF: New Service Details " + service
-		}
 	}
 
 	// Display the string in position [0,0]
