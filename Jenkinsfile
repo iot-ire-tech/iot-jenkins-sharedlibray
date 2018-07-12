@@ -34,19 +34,9 @@ node ("windows") {
 	for (String item : list) {
 
 	}
-ArrayList<ArrayList<String>> aObject;
 
-// Create the 2D array list
-	aObject  = new ArrayList<ArrayList<String>>();
-
-// Add an element to the first dimension
-	aObject.add ( new ArrayList<String>());
-
-// Place a string in position [0,0]
-aObject.get ( 0).add(new String("Quarks"));
-
+	String [][] a = new String [][]{{'Hi','Hello'}} // won't compile in Groovy
 // Display the string in position [0,0]
-println(aObject.get (0).get(0).toString());	
 
 	//	for ( serviceItem in servicesPack ) {
 	//		println "INF: New Service Test " + serviceItem.value
