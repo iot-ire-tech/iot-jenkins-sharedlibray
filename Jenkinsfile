@@ -11,15 +11,12 @@ def env = params.env
 
 def debug=false
 
-
+agit = new gitIt()
+builder = new gradleIt()
+reporter = new reportIt()
+arch = new archiveIt()
 
 node ("windows") {	
-
-	pl = new pipeline()
-	agit = new gitIt()
-	builder = new gradleIt()
-	reporter = new reportIt()
-	arch = new archiveIt()
 
 	stage ("init") {
 		deleteDir()
@@ -29,9 +26,10 @@ node ("windows") {
 		agit.checkOutTestAutomation ()
 	}
 
-	stage ("runTests") {
+	stage ("runTests-"+sut) {
+		serviceRef ="https://github.aig.net/commercial-it-global-delivery/ael-policy-autobooker-test-automation-5416.git";
 		targetDir = "myAcceptanceTests"
-		builder.test (targetDir)
+		builder.test (serviceRef, targetDir)
 	}
 
 	stage ("report") {

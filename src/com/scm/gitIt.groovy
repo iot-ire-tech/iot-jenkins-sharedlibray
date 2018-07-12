@@ -2,11 +2,9 @@
 package com.scm
 
 
-def checkOutTestAutomation () {
+def checkOutTestAutomation (serviceRef, targetDir) {
 	creds = "ssh_devopspipeline_credentials";
 	creds = "devopspipeline"
-	serviceToTest ="https://github.aig.net/commercial-it-global-delivery/ael-policy-autobooker-test-automation-5416.git";
-	targetDir = "myAcceptanceTests"
 
 	checkout(
 		[$class: 'GitSCM', 
@@ -17,7 +15,7 @@ def checkOutTestAutomation () {
 				[$class: 'RelativeTargetDirectory', relativeTargetDir: targetDir]
 			], 
 			gitTool: 'Default', submoduleCfg: [], 
-			userRemoteConfigs: [[credentialsId: creds, url: serviceToTest]]
+			userRemoteConfigs: [[credentialsId: creds, url: serviceRef]]
 		])
 }	
 return this
