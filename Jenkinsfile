@@ -13,14 +13,14 @@ def debug=false
 node ("windows") {	
 
 	pl = new pipeline()
-	agit = new git()
+	agit = new gitIt()
 
 	stage ("init") {
 		deleteDir()
 	}
 
 	stage ("checkoutTests") {
-		checkOutTestAutomation ()
+		agit.checkOutTestAutomation ()
 	}
 
 	// work
