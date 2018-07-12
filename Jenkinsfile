@@ -26,6 +26,7 @@ node ("windows") {
 	}
 
 	stage ("runTests") {
-		builder.test ()
+	targetDir = "myAcceptanceTests"
+		builder.test (targetDir)
 	}
 }
