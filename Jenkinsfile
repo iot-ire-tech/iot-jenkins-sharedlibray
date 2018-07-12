@@ -34,8 +34,6 @@ node ("windows") {
 	servicesPack.add(serviceItemApp);
 
 	for (ArrayList<String> services : servicesPack) {
-		println "INF: Service Name " + services.get(0)
-		println "INF: Service Ref " + services.get(1)
 		
 //		for (String service  : services) {
 //			println "INF: New Service Test " + service
@@ -64,4 +62,45 @@ node ("windows") {
 //		}
 
 	}
+}
+class JsonToObject {
+
+    public static void main(String[] args) {
+
+        // Person object
+
+        def person = new Person(firstName: "John", lastName: "Doe")
+
+        // Json String
+
+        def personJSON = new JsonBuilder(person).toPrettyString()
+
+        // Json String to Map
+
+        def personMap = new JsonSlurper().parseText(personJSON)
+
+        // using Map to convert to Person object type
+
+        def newPerson = new Person(personMap)
+
+        println(person)
+
+        println(newPerson)
+
+        assert newPerson.firstName.equals(person.firstName)
+
+        assert newPerson.lastName.equals(person.lastName)
+
+    }
+
+}
+
+@ToString
+
+class Person {  
+
+    String firstName
+
+    String lastName
+
 }
