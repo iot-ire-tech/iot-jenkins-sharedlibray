@@ -24,21 +24,24 @@ node ("windows") {
 	// For each new service repeat!!!	
 	serviceRef ="https://github.aig.net/commercial-it-global-delivery/ael-policy-autobooker-test-automation-5416.git";
 	ArrayList<ArrayList<String>> servicesPack = new ArrayList<ArrayList<String>>();
-		ArrayList<String> serviceItemBR = new ArrayList<String>();
-		serviceItemBR.add("BR");
-		serviceItemBR.add("BR-Ref");
-		servicesPack.add(serviceItemBR);
-		ArrayList<String> serviceItemApp = new ArrayList<String>();
-		serviceItemBR.add("App");
-		serviceItemBR.add("App-Ref");
-		servicesPack.add(serviceItemApp);
+	ArrayList<String> serviceItemBR = new ArrayList<String>();
+	serviceItemBR.add("BR");
+	serviceItemBR.add("BR-Ref");
+	servicesPack.add(serviceItemBR);
+	ArrayList<String> serviceItemApp = new ArrayList<String>();
+	serviceItemBR.add("App");
+	serviceItemBR.add("App-Ref");
+	servicesPack.add(serviceItemApp);
 
-		for (ArrayList<String> services : servicesPack) {
-			for (String service : services) {
-			}
+	for (ArrayList<String> services : servicesPack) {
+		println "INF: Service Name " + services.get(0)
+		println "INF: Service Ref " + services.get(1)
+		for (String service : services) {
+			println "INF: New Service Details " + serviceItem.value
 		}
+	}
 
-// Display the string in position [0,0]
+	// Display the string in position [0,0]
 
 	//	for ( serviceItem in servicesPack ) {
 	//		println "INF: New Service Test " + serviceItem.value
