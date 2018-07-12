@@ -23,13 +23,13 @@ node ("windows") {
 	}
 
 	stage ("checkoutTests") {
-		agit.checkOutTestAutomation ()
+		serviceRef ="https://github.aig.net/commercial-it-global-delivery/ael-policy-autobooker-test-automation-5416.git";
+		targetDir = "myAcceptanceTests"
+		agit.checkOutTestAutomation (serviceRef, targetDir)
 	}
 
 	stage ("runTests-"+sut) {
-		serviceRef ="https://github.aig.net/commercial-it-global-delivery/ael-policy-autobooker-test-automation-5416.git";
-		targetDir = "myAcceptanceTests"
-		builder.test (serviceRef, targetDir)
+		builder.test (targetDir)
 	}
 
 	stage ("report") {
