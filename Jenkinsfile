@@ -16,7 +16,11 @@ node ("windows") {
 	stage ("init") {
 		deleteDir()
 	}
-		
+
+	stage ("checkoutTests") {
+		checkOutTestAutomation 
+	}
+
 	// work
 	pl.build()
 	pl.test("regression")
