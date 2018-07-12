@@ -19,36 +19,50 @@ builder = new gradleIt()
 reporter = new reportIt()
 arch = new archiveIt()
 
+gifRef ="https://github.aig.net/commercial-it-global-delivery";
+servicePre="ael-policy-";
+servicePost="-5416.git";
+
+serviceRef ="autobooker-test-automation";
+serviceRef2 ="";
+serviceRef3 ="transformation-service";
+serviceRef4 ="data-service";
+serviceRef5 ="application-service";
+serviceRef6 ="client-service";
+serviceRef7 ="agent-api-service";
+serviceRef8 ="rule-cache-service";
+
+servicePack = [serviceRef, serviceRef2 ]
+
 node ("windows") {	
 
 	// For each new service repeat!!!	
-	serviceRef ="https://github.aig.net/commercial-it-global-delivery/ael-policy-autobooker-test-automation-5416.git";
-	serviceRef2 ="https://github.aig.net/commercial-it-global-delivery/ael-policy-autobooker-test-automation-5416.git";
-	servicePack = [serviceRef, serviceRef2 ]
+	for (String service  : servicePack) {
+		aservice = service
+		aserviceRef = gifRef + "/" + servicePre + service + servicePost
+		println "INF: New Service To Test " + aservice
+		println "INF: New Service Ref " + aserviceRef
 		
-		for (String service  : servicePack) {
-			println "INF: New Service Test " + service
-			
-//			deleteDir()
-//					
-//			stage ("coTests") {
-//				targetDir = "myAcceptanceTests"
-//				agit.checkOutTestAutomation (serviceItem, targetDir)
-//			}
-//					
-//			stage ("exeTest-"+sut) {
-//				builder.test (targetDir)
-//			}
-//					
-//			stage ("report") {
-//				targetDir = "myAcceptanceTests"
-//				reporter.test (targetDir)
-//			}
-//					
-//			stage ("archive") {
-//				targetDir = "myAcceptanceTests/build/report/**"
-//				arch.archive (targetDir)
-//			}
+		deleteDir()
+							
+		stage ("coTests") {
+			targetDir = "myAcceptanceTests"
+			agit.checkOutTestAutomation (aserviceRef, targetDir)
 		}
+							
+		stage ("exeTest-"+aservice) {
+			builder.test (targetDir)
+		}
+							
+		stage ("report") {
+			targetDir = "myAcceptanceTests"
+			reporter.test (targetDir)
+		}
+							
+		stage ("archive") {
+			targetDir = "myAcceptanceTests/build/report/**"
+			arch.archive (targetDir)
+		}
+	}
 
 }
