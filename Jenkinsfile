@@ -32,7 +32,6 @@ node ("windows") {
 	list.add("B");
 	list.add("C");
 	for (String item : list) {
-		System.out.println(item)
 	}
 
 	for ( serviceItem in servicesPack ) {
