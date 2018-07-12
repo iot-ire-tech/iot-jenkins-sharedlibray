@@ -33,12 +33,13 @@ serviceRef7 ="agent-api-service";
 serviceRef8 ="rule-cache-service";
 
 servicePack = [serviceRef, serviceRef2 ]
-servicePack = [serviceRef2 ]
+#servicePack = [serviceRef2 ]
 
-node ("windows") {	
+for (String service  : servicePack) {
 
-	// For each new service repeat!!!	
-	for (String service  : servicePack) {
+	node ("windows") {	
+
+		// For each new service repeat!!!	
 		aservice = service
 		aserviceRef = gifRef + "/" + servicePre + service + servicePost
 		println "INF: New Service To Test " + aservice
