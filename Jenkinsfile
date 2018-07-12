@@ -35,7 +35,8 @@ node ("windows") {
 
 	}
 
-	String [][] a = new String [][]{{'Hi','Hello'}} // won't compile in Groovy
+	ArrayList[][] arr = new ArrayList[10][10];
+	List<List<String>> arr = ArrayList<ArrayList<String>>();
 // Display the string in position [0,0]
 
 	//	for ( serviceItem in servicesPack ) {
