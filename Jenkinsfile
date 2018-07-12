@@ -26,8 +26,8 @@ node ("windows") {
 	for ( serviceItem in servicesPack ) {
 		println "INF: New Service Test " + serviceItem.value
 
-		for ( service in serviceItem.value ) {
-			println "INF: Service Item " + service 
+		serviceItem.value.list.each  {
+			println "INF: Service Item " + it 
 			deleteDir()
 		
 			//		stage ("coTests") {
