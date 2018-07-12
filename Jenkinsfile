@@ -34,37 +34,34 @@ node ("windows") {
 	servicesPack.add(serviceItemApp);
 
 	for (ArrayList<String> services : servicesPack) {
-		//		println "INF: Service Name " + services.get(0)
-		//	println "INF: Service Ref " + services.get(1)
-		for (String service  : services) {
-			println "INF: Service Name " + service
-		}
+		println "INF: Service Name " + services.get(0)
+		println "INF: Service Ref " + services.get(1)
+		
+//		for (String service  : services) {
+//			println "INF: New Service Test " + service
+//			println "INF: New Service Test " + service
+//			
+////			deleteDir()
+////					
+////			stage ("coTests") {
+////				targetDir = "myAcceptanceTests"
+////				agit.checkOutTestAutomation (serviceItem, targetDir)
+////			}
+////					
+////			stage ("exeTest-"+sut) {
+////				builder.test (targetDir)
+////			}
+////					
+////			stage ("report") {
+////				targetDir = "myAcceptanceTests"
+////				reporter.test (targetDir)
+////			}
+////					
+////			stage ("archive") {
+////				targetDir = "myAcceptanceTests/build/report/**"
+////				arch.archive (targetDir)
+////			}
+//		}
+
 	}
-
-	// Display the string in position [0,0]
-
-	//	for ( serviceItem in servicesPack ) {
-	//		println "INF: New Service Test " + serviceItem.value
-	//
-	//		deleteDir()
-	//		
-	//		//		stage ("coTests") {
-	//		//			targetDir = "myAcceptanceTests"
-	//		//			agit.checkOutTestAutomation (serviceItem, targetDir)
-	//		//		}
-	//		//
-	//		//		stage ("exeTest-"+sut) {
-	//		//			builder.test (targetDir)
-	//		//		}
-	//		//
-	//		//		stage ("report") {
-	//		//			targetDir = "myAcceptanceTests"
-	//		//			reporter.test (targetDir)
-	//		//		}
-	//		//
-	//		//		stage ("archive") {
-	//		//			targetDir = "myAcceptanceTests/build/report/**"
-	//		//			arch.archive (targetDir)
-	//		//		}
-	//	}
 }
