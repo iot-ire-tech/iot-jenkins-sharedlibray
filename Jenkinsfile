@@ -5,6 +5,9 @@ import com.gradle.*
 import com.reports.*
 import com.archive.*
 
+import java.util.ArrayList;
+import java.util.List;
+
 mode = params.mode.toLowerCase()
 def sut = params.sut
 def env = params.env
