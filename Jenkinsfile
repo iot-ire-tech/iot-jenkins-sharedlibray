@@ -27,7 +27,9 @@ node ("windows") {
 	def m = [br: ["br", serviceRef]]
 	for ( item in m ) {
 		println "INF: key " + item.key 
-		println "INF: val " + item.value 
+		item.value.list {
+			println "INF: val " + it 
+		}
 	}
 		
 	stage ("checkoutTests") {
