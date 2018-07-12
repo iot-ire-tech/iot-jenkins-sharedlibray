@@ -3,6 +3,7 @@ import com.iot.*
 import com.scm.*
 import com.gradle.*
 import com.reports.*
+import com.archive.*
 
 mode = params.mode.toLowerCase()
 def sut = params.serviceName
@@ -18,6 +19,7 @@ node ("windows") {
 	agit = new gitIt()
 	builder = new gradleIt()
 	reporter = new reportIt()
+	arch = new archiveIt()
 
 	stage ("init") {
 		deleteDir()
@@ -31,9 +33,14 @@ node ("windows") {
 		targetDir = "myAcceptanceTests"
 		builder.test (targetDir)
 	}
+
 	stage ("report") {
 		targetDir = "myAcceptanceTests"
 		reporter.test (targetDir)
 	}
-	
+
+	stage ("archive") {
+		targetDir = "myAcceptanceTests"
+		arch.archive (targetDir)
+	}
 }
