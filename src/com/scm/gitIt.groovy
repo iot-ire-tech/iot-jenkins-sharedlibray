@@ -1,4 +1,5 @@
 #!/usr/bin/groovy
+package com.scm
 
 creds = "ssh_devopspipeline_credentials";
 creds = "devopspipeline"
