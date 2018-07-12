@@ -36,7 +36,7 @@ node ("windows") {
 	}
 
 	ArrayList[][] arr = new ArrayList[10][10];
-	List<List<String>> arr = ArrayList<ArrayList<String>>();
+	List<List<String>> arr2 = new ArrayList<ArrayList<String>>();
 // Display the string in position [0,0]
 
 	//	for ( serviceItem in servicesPack ) {
