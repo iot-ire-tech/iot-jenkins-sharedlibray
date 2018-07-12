@@ -34,8 +34,11 @@ node ("windows") {
 	servicesPack.add(serviceItemApp);
 
 	for (ArrayList<String> services : servicesPack) {
-		println "INF: Service Name " + services.get(0)
-		println "INF: Service Ref " + services.get(1)
+		//		println "INF: Service Name " + services.get(0)
+		//	println "INF: Service Ref " + services.get(1)
+		for (String service  : services) {
+			println "INF: Service Name " + service
+		}
 	}
 
 	// Display the string in position [0,0]
