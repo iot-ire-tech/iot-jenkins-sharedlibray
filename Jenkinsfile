@@ -23,70 +23,32 @@ node ("windows") {
 
 	// For each new service repeat!!!	
 	serviceRef ="https://github.aig.net/commercial-it-global-delivery/ael-policy-autobooker-test-automation-5416.git";
+	serviceRef2 ="https://github.aig.net/commercial-it-global-delivery/ael-policy-autobooker-test-automation-5416.git";
+	servicePack = [serviceRef, serviceRef2 ]
 		
-//		for (String service  : services) {
-//			println "INF: New Service Test " + service
-//			println "INF: New Service Test " + service
-//			
-////			deleteDir()
-////					
-////			stage ("coTests") {
-////				targetDir = "myAcceptanceTests"
-////				agit.checkOutTestAutomation (serviceItem, targetDir)
-////			}
-////					
-////			stage ("exeTest-"+sut) {
-////				builder.test (targetDir)
-////			}
-////					
-////			stage ("report") {
-////				targetDir = "myAcceptanceTests"
-////				reporter.test (targetDir)
-////			}
-////					
-////			stage ("archive") {
-////				targetDir = "myAcceptanceTests/build/report/**"
-////				arch.archive (targetDir)
-////			}
-//		}
-
-}
-class JsonToObject {
-
-    public static void main(String[] args) {
-
-        // Person object
-
-        def person = new Person(firstName: "John", lastName: "Doe")
-
-        // Json String
-
-        def personJSON = new JsonBuilder(person).toPrettyString()
-
-        // Json String to Map
-
-        def personMap = new JsonSlurper().parseText(personJSON)
-
-        // using Map to convert to Person object type
-
-        def newPerson = new Person(personMap)
-
-        println(person)
-
-        println(newPerson)
-
-        assert newPerson.firstName.equals(person.firstName)
-
-        assert newPerson.lastName.equals(person.lastName)
-
-    }
-
-}
-
-class Person {  
-
-    String firstName
-
-    String lastName
+		for (String service  : servicePack) {
+			println "INF: New Service Test " + service
+			
+//			deleteDir()
+//					
+//			stage ("coTests") {
+//				targetDir = "myAcceptanceTests"
+//				agit.checkOutTestAutomation (serviceItem, targetDir)
+//			}
+//					
+//			stage ("exeTest-"+sut) {
+//				builder.test (targetDir)
+//			}
+//					
+//			stage ("report") {
+//				targetDir = "myAcceptanceTests"
+//				reporter.test (targetDir)
+//			}
+//					
+//			stage ("archive") {
+//				targetDir = "myAcceptanceTests/build/report/**"
+//				arch.archive (targetDir)
+//			}
+		}
 
 }
