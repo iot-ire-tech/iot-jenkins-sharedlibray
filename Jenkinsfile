@@ -32,30 +32,35 @@ node ("windows") {
 	list.add("B");
 	list.add("C");
 	for (String item : list) {
-	}
 
-//	for ( serviceItem in servicesPack ) {
-//		println "INF: New Service Test " + serviceItem.value
-//
-//		deleteDir()
-//		
-//		//		stage ("coTests") {
-//		//			targetDir = "myAcceptanceTests"
-//		//			agit.checkOutTestAutomation (serviceItem, targetDir)
-//		//		}
-//		//
-//		//		stage ("exeTest-"+sut) {
-//		//			builder.test (targetDir)
-//		//		}
-//		//
-//		//		stage ("report") {
-//		//			targetDir = "myAcceptanceTests"
-//		//			reporter.test (targetDir)
-//		//		}
-//		//
-//		//		stage ("archive") {
-//		//			targetDir = "myAcceptanceTests/build/report/**"
-//		//			arch.archive (targetDir)
-//		//		}
-//	}
+	}
+	ArrayList[][] table = new ArrayList[10][10];
+	table[0][0] = new ArrayList(); // add another ArrayList object to [0,0]
+	table[0][0].add(); // add object to that ArrayList
+	
+
+	//	for ( serviceItem in servicesPack ) {
+	//		println "INF: New Service Test " + serviceItem.value
+	//
+	//		deleteDir()
+	//		
+	//		//		stage ("coTests") {
+	//		//			targetDir = "myAcceptanceTests"
+	//		//			agit.checkOutTestAutomation (serviceItem, targetDir)
+	//		//		}
+	//		//
+	//		//		stage ("exeTest-"+sut) {
+	//		//			builder.test (targetDir)
+	//		//		}
+	//		//
+	//		//		stage ("report") {
+	//		//			targetDir = "myAcceptanceTests"
+	//		//			reporter.test (targetDir)
+	//		//		}
+	//		//
+	//		//		stage ("archive") {
+	//		//			targetDir = "myAcceptanceTests/build/report/**"
+	//		//			arch.archive (targetDir)
+	//		//		}
+	//	}
 }
