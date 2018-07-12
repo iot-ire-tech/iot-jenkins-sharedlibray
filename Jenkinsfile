@@ -1,5 +1,6 @@
 @Library("github.com/iot-ire-tech/iot-jenkins-sharedlibray@master")
 import com.iot.*
+import com.scm.*
 
 mode = params.mode.toLowerCase()
 def sut = params.serviceName
