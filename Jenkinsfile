@@ -23,31 +23,37 @@ node ("windows") {
 	servicesPack = [
 		br :  ["br", serviceRef]
 	]
+	List<String> list = new ArrayList<String>();
+	list.add("A");
+	list.add("A");
+	list.add("B");
+	list.add("C");
+	for (String item : list) {
+		System.out.println(item)
+	}
+
 	for ( serviceItem in servicesPack ) {
 		println "INF: New Service Test " + serviceItem.value
 
-		serviceItem.value.list.each  {
-			println "INF: Service Item " + it 
-			deleteDir()
+		deleteDir()
 		
-			//		stage ("coTests") {
-			//			targetDir = "myAcceptanceTests"
-			//			agit.checkOutTestAutomation (serviceItem, targetDir)
-			//		}
-			//
-			//		stage ("exeTest-"+sut) {
-			//			builder.test (targetDir)
-			//		}
-			//
-			//		stage ("report") {
-			//			targetDir = "myAcceptanceTests"
-			//			reporter.test (targetDir)
-			//		}
-			//
-			//		stage ("archive") {
-			//			targetDir = "myAcceptanceTests/build/report/**"
-			//			arch.archive (targetDir)
-			//		}
-		}
+		//		stage ("coTests") {
+		//			targetDir = "myAcceptanceTests"
+		//			agit.checkOutTestAutomation (serviceItem, targetDir)
+		//		}
+		//
+		//		stage ("exeTest-"+sut) {
+		//			builder.test (targetDir)
+		//		}
+		//
+		//		stage ("report") {
+		//			targetDir = "myAcceptanceTests"
+		//			reporter.test (targetDir)
+		//		}
+		//
+		//		stage ("archive") {
+		//			targetDir = "myAcceptanceTests/build/report/**"
+		//			arch.archive (targetDir)
+		//		}
 	}
 }
