@@ -1,6 +1,7 @@
 @Library("github.com/iot-ire-tech/iot-jenkins-sharedlibray@master")
 import com.iot.*
 import com.scm.*
+import com.gradle.*
 
 mode = params.mode.toLowerCase()
 def sut = params.serviceName
@@ -25,13 +26,6 @@ node ("windows") {
 	}
 
 	stage ("runTests") {
-	
-		}
-	// work
-	pl.build()
-	pl.test("regression")
-	pl.deploy("staging","api")
-	pl.test("load")
-	pl.deploy("prod","api")
-
+		builder.test ()
+	}
 }
