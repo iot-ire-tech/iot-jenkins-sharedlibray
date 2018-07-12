@@ -23,7 +23,6 @@ node ("windows") {
 
 	// For each new service repeat!!!	
 	serviceRef ="https://github.aig.net/commercial-it-global-delivery/ael-policy-autobooker-test-automation-5416.git";
-	for (ArrayList<String> services : servicesPack) {
 		
 //		for (String service  : services) {
 //			println "INF: New Service Test " + service
@@ -51,7 +50,6 @@ node ("windows") {
 ////			}
 //		}
 
-	}
 }
 class JsonToObject {
 
