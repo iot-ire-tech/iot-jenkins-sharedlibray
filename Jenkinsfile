@@ -22,7 +22,8 @@ node ("windows") {
 	serviceRef ="https://github.aig.net/commercial-it-global-delivery/ael-policy-autobooker-test-automation-5416.git";
 	services = [ serviceRef, serviceRef]
 	for ( serviceItem in services ) {
-		println "INF: Starting New Component Service Test " + serviceItem.key 
+
+		println "INF: Starting New Component Service Test " + serviceItem 
 		deleteDir()
 		
 		stage ("checkoutTests") {
