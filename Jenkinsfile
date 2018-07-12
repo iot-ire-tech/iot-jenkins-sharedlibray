@@ -24,7 +24,7 @@ servicePre="ael-policy-";
 servicePost="-5416.git";
 
 serviceRef ="autobooker-test-automation";
-serviceRef2 ="";
+serviceRef2 ="autobooker"; // ael-policy-autobooker-5416
 serviceRef3 ="transformation-service";
 serviceRef4 ="data-service";
 serviceRef5 ="application-service";
@@ -33,6 +33,7 @@ serviceRef7 ="agent-api-service";
 serviceRef8 ="rule-cache-service";
 
 servicePack = [serviceRef, serviceRef2 ]
+servicePack = [serviceRef2 ]
 
 node ("windows") {	
 
