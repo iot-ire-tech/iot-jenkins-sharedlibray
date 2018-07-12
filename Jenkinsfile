@@ -1,16 +1,15 @@
-@Library("github.com/iot-ire-tech/iot-jenkins-sharedlibray@master")
+//@Library("github.com/iot-ire-tech/iot-jenkins-sharedlibray@master")
+@Library("iot-jenkins-sharedlibray")
 import com.iot.*
 import com.scm.*
 import com.gradle.*
 import com.reports.*
 import com.archive.*
-import groovy.json.*;
-import java.util.ArrayList;
-import java.util.List;
+import groovy.json.*
+import java.util.ArrayList
+import java.util.List
 
 mode = params.mode.toLowerCase()
-def sut = params.sut
-def env = params.env
 
 def debug=false
 
@@ -47,12 +46,12 @@ for (String service  : servicePack) {
 		
 		deleteDir()
 							
-		stage ("coTests") {
+		stage ("checkOut\nTests") {
 			targetDir = "myAcceptanceTests"
 			agit.checkOutTestAutomation (aserviceRef, targetDir)
 		}
 							
-		stage ("exeTest-"+aservice) {
+		stage ("execTest\n"+aservice) {
 			builder.test (targetDir)
 		}
 							
