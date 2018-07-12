@@ -2,6 +2,7 @@
 import com.iot.*
 import com.scm.*
 import com.gradle.*
+import com.reports.*
 
 mode = params.mode.toLowerCase()
 def sut = params.serviceName
@@ -16,6 +17,7 @@ node ("windows") {
 	pl = new pipeline()
 	agit = new gitIt()
 	builder = new gradleIt()
+	reporter = new reportIt()
 
 	stage ("init") {
 		deleteDir()
@@ -26,7 +28,12 @@ node ("windows") {
 	}
 
 	stage ("runTests") {
-	targetDir = "myAcceptanceTests"
+		targetDir = "myAcceptanceTests"
 		builder.test (targetDir)
 	}
+	stage ("report") {
+		targetDir = "myAcceptanceTests"
+		reporter.test (targetDir)
+	}
+	
 }
