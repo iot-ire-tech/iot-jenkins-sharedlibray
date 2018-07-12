@@ -25,14 +25,7 @@ node ("windows") {
 	}
 
 	stage ("runTests") {
-			echo "INF: Current Path (" + pwd() +")"
-			dir ( _targetDir ) {
-				echo "INF: New Current Path (" + pwd() +")"
-				bat "./gradlew.bat clean"
-				bat "./gradlew.bat test"
-				if (debug ) bat "dir /s ." 
-			}
-            
+	
 		}
 	// work
 	pl.build()
