@@ -34,28 +34,28 @@ node ("windows") {
 	for (String item : list) {
 	}
 
-	for ( serviceItem in servicesPack ) {
-		println "INF: New Service Test " + serviceItem.value
-
-		deleteDir()
-		
-		//		stage ("coTests") {
-		//			targetDir = "myAcceptanceTests"
-		//			agit.checkOutTestAutomation (serviceItem, targetDir)
-		//		}
-		//
-		//		stage ("exeTest-"+sut) {
-		//			builder.test (targetDir)
-		//		}
-		//
-		//		stage ("report") {
-		//			targetDir = "myAcceptanceTests"
-		//			reporter.test (targetDir)
-		//		}
-		//
-		//		stage ("archive") {
-		//			targetDir = "myAcceptanceTests/build/report/**"
-		//			arch.archive (targetDir)
-		//		}
-	}
+//	for ( serviceItem in servicesPack ) {
+//		println "INF: New Service Test " + serviceItem.value
+//
+//		deleteDir()
+//		
+//		//		stage ("coTests") {
+//		//			targetDir = "myAcceptanceTests"
+//		//			agit.checkOutTestAutomation (serviceItem, targetDir)
+//		//		}
+//		//
+//		//		stage ("exeTest-"+sut) {
+//		//			builder.test (targetDir)
+//		//		}
+//		//
+//		//		stage ("report") {
+//		//			targetDir = "myAcceptanceTests"
+//		//			reporter.test (targetDir)
+//		//		}
+//		//
+//		//		stage ("archive") {
+//		//			targetDir = "myAcceptanceTests/build/report/**"
+//		//			arch.archive (targetDir)
+//		//		}
+//	}
 }
