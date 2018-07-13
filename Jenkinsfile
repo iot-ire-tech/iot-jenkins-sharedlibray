@@ -1,5 +1,4 @@
-//@Library("github.com/iot-ire-tech/iot-jenkins-sharedlibray@master")
-@Library("iot-jenkins-sharedlibray")
+@Library("github.com/iot-ire-tech/iot-jenkins-sharedlibray@master")
 import com.iot.*
 import com.scm.*
 import com.gradle.*
